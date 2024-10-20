@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import SignUpModal from './SignUpModal';
 import { useEffect, useState } from 'react';
-import SignInModal from './SignINModal';
+import SignInModal from './SignInModal';
 import { useAuth } from './auth/AuthContext';
 import { sendAuthPublicReq, sendUserProtectedReq } from './api/useApi';
 import { Collapse, Divider } from '@mui/material';
