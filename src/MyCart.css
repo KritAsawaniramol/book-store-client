@@ -1,0 +1,9 @@
+.tableFields {
+   padding: 20px;
+   text-align: center;
+}
+
+.tableFields > p {
+    font-weight: bold;
+}
+
