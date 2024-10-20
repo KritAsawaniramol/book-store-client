@@ -9,20 +9,20 @@ import ShelfBookCard from './ShelfBookCard';
 export default function MyShelf() {
     const { theme } = useThemeContext();
     const [books, setBooks] = useState([]);
-    const [isLoading, setIsLoadding] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         fetchData()
     }, [])
 
     const fetchData = () => {
-        setIsLoadding(true)
+        setIsLoading(true)
         sendShelfProtectedReq.get("/shelf")
             .then((res) => {
                 console.log(res.data.shelves)
                 setBooks(res.data.shelves)
             })
             .catch((err) => alert(err.response))
-            .finally(() => setIsLoadding(false))
+            .finally(() => setIsLoading(false))
     }
 
     return (
