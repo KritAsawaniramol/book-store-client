@@ -84,6 +84,7 @@ export default function SignUpModal(props) {
             setConfirmPassword("")
             handleClose()
         }).catch(function (err) {
+            console.log(err);
             alert(err.response.data.message)
         })
     };

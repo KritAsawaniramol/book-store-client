@@ -75,6 +75,7 @@ export default function SignInModal(props) {
                 nav("/")
             } 
         }).catch(function (err) {
+            console.log(err);
             alert(err.response.data.message)
         })
     };
