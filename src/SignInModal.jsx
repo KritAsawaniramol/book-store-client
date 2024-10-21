@@ -72,7 +72,8 @@ export default function SignInModal(props) {
             if (res.data.role_id == 1) {
                 nav("/usertransactions")
             } else {
-                nav("/")
+                
+                location.reload()
             } 
         }).catch(function (err) {
             console.log(err);
