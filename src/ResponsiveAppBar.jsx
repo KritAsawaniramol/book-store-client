@@ -235,7 +235,7 @@ function ResponsiveAppBar(props) {
                 <Typography>{profile.username ? profile.username : ""}</Typography>
                 <Box display={'flex'} alignItems={'center'} gap={'7px'}>
                   <MonetizationOnIcon fontSize="small" />
-                  <Typography> {profile.coin ? profile.coin : "?"}</Typography>
+                  <Typography> {profile.coin}</Typography>
                 </Box>
                 <Button variant='outlined' color="error" onClick={handleLogout}>Log out</Button>
               </Box>
