@@ -48,7 +48,7 @@ export default function BookCard(props) {
                             minWidth: '160px', 
                             objectFit: 'contain', 
                         }}
-                        src={bookCoverImageUrl}
+                        src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${bookCoverImageUrl}`}
                     />
                 </Link>
 

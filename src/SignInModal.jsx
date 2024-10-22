@@ -136,7 +136,7 @@ export default function SignInModal(props) {
                                 type='submit'
                                 fullWidth
                                 onClick={validateInputs}
-                            >Sign Up</Button>
+                            >Sign In</Button>
                         </Box>
                     </Box>
                 </Fade>

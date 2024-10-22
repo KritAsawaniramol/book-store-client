@@ -70,7 +70,7 @@ export default function AddToCartModal(props) {
             </Typography>
             <Box
             component={'img'}
-            src={bookCoverImageUrl}
+            src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${bookCoverImageUrl}`}
             sx={{ height: 200, objectFit: 'contain', display: 'block' }}
             ></Box>
             <Box display={'flex'}  gap={"10px"}>

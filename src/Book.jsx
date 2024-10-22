@@ -95,9 +95,10 @@ export default function Book() {
                                             })
                                         }
                                     </Box>
-
-                                    <Typography><Typography fontWeight={'bold'} display={'inline'}>Author:</Typography> {book.author_name || ""}</Typography>
-                                    <Typography><Typography fontWeight={'bold'} display={'inline'}>Description:</Typography> {book.description || ""}</Typography>
+                                    <Typography fontWeight={'bold'} display={'inline'}>Author:</Typography>
+                                    <Typography>{book.author_name || ""}</Typography>
+                                    <Typography fontWeight={'bold'} display={'inline'}>Description:</Typography>
+                                    <Typography>{book.description || ""}</Typography>
 
                                 </Box>
                                 <AddToCartModal bookCoverImageUrl={book.cover_image_url} open={openAddToCart} handleClose={handleCloseAddToCart} bookID={book.id} />

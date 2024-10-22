@@ -112,6 +112,8 @@ const router = createBrowserRouter([
   },
 ])
 
+console.log("hello world");
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CartContextProvider>

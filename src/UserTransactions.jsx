@@ -7,11 +7,12 @@ import { sendUserProtectedReq } from "./api/useApi";
 
 export default function UserTransactions() {
     const { theme } = useThemeContext();
-    const [userID, setUserID] = useState()
+    const [userID, setUserID] = useState("")
     const [userIDError, setUserIDError] = useState(false)
     const [userIDErrorMessage, setUserIDErrorMessage] = useState("")
-    const [amount, setAmount] = useState()
+    const [amount, setAmount] = useState(0)
     const [amountError, setAmountIDError] = useState(false)
+    const [updateTable, setUpdateTable] = useState(false)
     const [amountErrorMessage, setAmountIDErrorMessage] = useState("")
     const validateInputs = () => {
         let isValid = true;
@@ -42,18 +43,22 @@ export default function UserTransactions() {
         }
         sendUserProtectedReq.post("/user/transaction", { user_id: Number(userID), amount: Number(amount) })
             .then(() => {
-                setUserID()
-                setAmount()
+                setUserID("")
+                setAmount(0)
+                setUpdateTable(true)
             })
             .catch((err) => alert(err.response.data.message))
+          
     }
+
+   
 
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <AdminDrawer>
                 <Typography variant="h4" fontWeight={'bold'} sx={{mb: '20px'}} >User transactions</Typography>
-                <UserTransactionsTable />
+                <UserTransactionsTable updateTable={updateTable} setUpdateTable={setUpdateTable}/>
                 <Typography variant="h5" fontWeight={'bold'} sx={{ mt: '40px' }}>Insert user transaction</Typography>
                 <Box component={'form'} autoComplete="off" onSubmit={handleSubmit} display={'flex'} flexDirection={'column'} gap={"20px"} mt={'20px'}>
                     <FormControl >

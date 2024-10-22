@@ -8,27 +8,27 @@ import { Link } from 'react-router-dom';
 
 export default function ShelfBookCard(props) {
     const { name, author, bookCoverImageUrl, id } = props
-    console.log(props);
-   
 
     const {theme} = useThemeContext()
 
     return (
         <>
-        <Link to={`/readbook/${id}`}>
             <Card variant='outlined'  
             sx={{
-                position: 'relative', maxWidth: "220px", maxHeight: "290px", aspectRatio: '2.2/4',
+                position: 'relative', 
+                maxWidth: "220px", maxHeight: "290px", aspectRatio: '2.2/4',
                 '&:hover' : {
                     borderColor: theme.palette.primary.main,
                     borderWidth: '3px'
                 }
                 }}>
+                    <Link to={`/readbook/${id}`}>
                 <CardMedia
                     component={'img'}
                     sx={{ height: 200, maxHeight: 250, objectFit: 'contain' }}
-                    src={bookCoverImageUrl}
+                    src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${bookCoverImageUrl}`}
                 />
+                 </Link>
                 <CardContent sx={{ padding: '8px', paddingBottom: '0px' }}>
                     <Typography fontSize={'15px'} fontWeight={'bold'} margin={0} sx={{
                         overflow: 'hidden',
@@ -51,7 +51,7 @@ export default function ShelfBookCard(props) {
                     </Typography>
                 </CardContent>
             </Card>
-            </Link>
+           
         </>
     );
 }

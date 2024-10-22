@@ -92,8 +92,8 @@ function Row(props) {
     );
 }
 
-export default function UserTransactionsTable() {
-
+export default function UserTransactionsTable(props) {
+    const {updateTable, setUpdateTable} = props
     const [rows, setRows] = React.useState([])
     const [displayRows, setDisplayRows] = React.useState([])
     const [rowsByNote, setRowsByNote] = React.useState()
@@ -112,7 +112,6 @@ export default function UserTransactionsTable() {
         setIsLoading(true)
         sendUserProtectedReq.get("/user/transaction")
             .then((res) => {
-                console.log(res.data);
                 let newRows = []
                 const transactions = res.data.transactions
                 if (transactions.length > 0) {
@@ -138,7 +137,6 @@ export default function UserTransactionsTable() {
                     setRowsByNote(noteGroups)
 
                     setNotes(Object.keys(noteGroups))
-                    console.log(Object.keys(noteGroups));
                     setRows(newRows)
                     setDisplayRows(newRows)
 
@@ -158,6 +156,13 @@ export default function UserTransactionsTable() {
             createdAt: cStr, id, userID, username, amount, updatedAt: uStr, note
         };
     }
+
+    React.useEffect(() => {
+        fetchData()
+        setUpdateTable(false)
+    }, [updateTable])
+
+
     React.useEffect(() => {
         fetchData()
     }, [])
@@ -318,4 +323,8 @@ Row.propTypes = {
         updatedAt: PropTypes.string,
         note: PropTypes.string,
     }),
+};
+UserTransactionsTable.propTypes = {
+    updateTable: PropTypes.bool,
+    setUpdateTable: PropTypes.func
 };

@@ -184,7 +184,7 @@ export default function UpdateBook() {
                 setTags(book.tags)
                 setAuthor(book.author_name)
                 setPrice(book.price)
-                setDescription(book.des)
+                setDescription(book.description)
                 setImage(book.cover_image_url)
                 setIsAvailable(book.is_available)
             })
@@ -235,11 +235,6 @@ export default function UpdateBook() {
 
         }
     }
-   
-
-
-
-
 
     return (
         <ThemeProvider theme={theme}>
@@ -283,7 +278,7 @@ export default function UpdateBook() {
                                             <Box display={'flex'} flexDirection={'column'}>
                                                 <Box
                                                     component={'img'}
-                                                    src={image}
+                                                    src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${image}`}
                                                     sx={{ height: 300, objectFit: 'contain', aspectRatio: '2.2/3' }}
                                                 ></Box>
                                                 <FormControl>
@@ -360,7 +355,8 @@ export default function UpdateBook() {
                                     maxHeight: '500px',
                                     objectFit: 'contain'
                                 }}
-                                src={image || ""}
+                                
+                                src={image ? `${import.meta.env.VITE_BOOK_SERVER_API_URL}${image}` : ""}
                             >
                             </Box>
                         </FormControl>
@@ -381,7 +377,7 @@ export default function UpdateBook() {
                             disabled={newImage == null}
                             size="large"
                             variant="contained"
-                            onClick={() => handleOnClickSavePdf()}
+                            onClick={() => setOpenSaveImageModal(true)}
                         >Save new image</Button>
                         <Button variant="outlined" color="error" onClick={cancelUploadImage}>Cancel</Button>
                     </Box>
@@ -455,7 +451,7 @@ export default function UpdateBook() {
                         message={"Do you want to use new pdf file to be book file?"}
                         open={openSavePdfModal}
                         handleOnClickYes={handleUpdateBookFile}
-                        handleClose={() => setOpenSavePdfModal(false)}
+                        handleClose={() => handleOnClickSavePdf()}
                     />
                 </Container>
             </AdminDrawer>

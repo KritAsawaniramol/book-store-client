@@ -167,7 +167,7 @@ export default function CreateBook() {
                     </FormControl>
                     <FormControl fullWidth>
                         <FormLabel>Tags</FormLabel>
-                            <AutocompleteSelectTags selected={tags} setSelected={setTags}/>
+                            <AutocompleteSelectTags selected={tags} setSelected={setTags} newTagInput={true}/>
                     </FormControl>
                     <FormControl fullWidth>
                         <FormLabel>Book cover image</FormLabel>

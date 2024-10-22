@@ -35,7 +35,7 @@ export default function ReadBook() {
                                 <Box
                                     component={'img'}
                                     sx={{ height: 200, maxHeight: 250, objectFit: 'contain' }}
-                                    src={book.cover_image_url}
+                                    src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${book.cover_image_url}`}
                                 ></Box>
                                 <Box ml={'20px'} display={'flex'} flexDirection={'column'} gap={'10px'} >
                                     <Typography>Title: {book.title}</Typography>
@@ -55,7 +55,7 @@ export default function ReadBook() {
                             : <CircularProgress />
                     }
 
-                    <PdfViewer bookID={bookID} />
+                    <PdfViewer bookID={Number(bookID)} />
                 </Paper>
             </Container>
         </ThemeProvider>
