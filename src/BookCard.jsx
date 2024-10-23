@@ -12,7 +12,6 @@ import AddToCartModal from './AddToCartModal';
 import { useState } from 'react';
 import { useThemeContext } from './theme/ThemeContextProvider';
 import { Link } from 'react-router-dom';
-
 export default function BookCard(props) {
     const { name, author, price, setOpenSignin, bookCoverImageUrl, id } = props
     const { isAuthenticated } = useAuth()

@@ -1,7 +1,7 @@
 import { useThemeContext } from "./theme/ThemeContextProvider";
 import { Box, Button, Container, CssBaseline, Grid2 as Grid, Paper, Typography } from "@mui/material";
 import ResponsiveAppBar from "./ResponsiveAppBar";
-import { getCart, getCountItemInCart, removeBookFromCart, setCart } from "./cart";
+import {  getCart, getCountItemInCart, removeBookFromCart, setCart } from "./cart";
 import './MyCart.css';
 import CartItem from "./CartItem";
 import { useState } from "react";
@@ -36,19 +36,19 @@ function MyCart() {
         const newCart = getCart()
         setItems(newCart)
         setCountItemInCart(getCountItemInCart())
-
     }
     const handleCheckout = () => {
         if (getCountItemInCart() > 0) {
         sendOrderProtectedReq.post("/order/buy", {"books": getCart()}).
         then(() => {
             setCart([])
+            setCountItemInCart(getCountItemInCart())
             nav("/myorder")
+            
         }).
         catch((err) => {console.log(err.response);})
     }
     }
-
 
     const addTotal = (cartIdx, price) => {
         console.log(`${cartIdx}: ${price}`);

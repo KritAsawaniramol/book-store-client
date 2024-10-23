@@ -16,7 +16,11 @@ import RequireAuth from './auth/RequireAuth.jsx'
 import Book from './Book.jsx'
 import AdminBook from './AdminBook.jsx'
 import UpdateBook from './UpdateBook.jsx'
-import MyShelf from './MyShelf.jsx';
+// import MyShelf from './MyShelf.jsx';
+import MyShelf from './MyShelf.jsx'
+import TopUp from './TopUp.jsx';
+import TopUpSuccess from './TopUpSuccess.jsx'
+import TopUpCancel from './TopUpCancel.jsx'
 
 
 const router = createBrowserRouter([
@@ -106,6 +110,33 @@ const router = createBrowserRouter([
     element:
       <RequireAuth role={[1]}>
         <UpdateBook />
+      </RequireAuth>
+    ,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/top-up",
+    element:
+      <RequireAuth role={[2]}>
+        <TopUp />
+      </RequireAuth>
+    ,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/top-up/success",
+    element:
+      <RequireAuth role={[2]}>
+        <TopUpSuccess />
+      </RequireAuth>
+    ,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/top-up/cancel",
+    element:
+      <RequireAuth role={[2]}>
+        <TopUpCancel />
       </RequireAuth>
     ,
     errorElement: <ErrorPage />,

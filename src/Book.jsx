@@ -66,7 +66,7 @@ export default function Book() {
                                 <Box display={'flex'} flexDirection={'column'} >
                                     <Paper
                                         component={'img'}
-                                        src={book.cover_image_url}
+                                        src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${book.cover_image_url}`}
                                         elevation={3}
 
                                         sx={{ borderRadius: 0, height: 300, objectFit: 'contain', aspectRatio: '2.2/3' }}
@@ -84,9 +84,9 @@ export default function Book() {
                                     </Button>
                                 </Box>
 
-                                <Box padding={'20px'} display={'flex'} gap={"20px"} flexDirection={'column'}
+                                <Box width={'100%'} padding={'20px'} display={'flex'} gap={"20px"} flexDirection={'column'}
                                 >
-                                    <Box display={'flex'} flexWrap={'wrap'}>
+                                    <Box display={'flex'} flexWrap={'wrap'} >
                                         {
                                             book.tags.map((t, tIdx) => {
                                                 return (
@@ -95,10 +95,12 @@ export default function Book() {
                                             })
                                         }
                                     </Box>
-                                    <Typography fontWeight={'bold'} display={'inline'}>Author:</Typography>
-                                    <Typography>{book.author_name || ""}</Typography>
-                                    <Typography fontWeight={'bold'} display={'inline'}>Description:</Typography>
-                                    <Typography>{book.description || ""}</Typography>
+                                   
+                                    
+                                    <Typography ><Typography component={'span'} fontWeight={'bold'} >Author: </Typography>{book.author_name || ""}</Typography>
+                                    
+                                    
+                                    <Typography><Typography component={'span'} fontWeight={'bold'} display={'inline'}>Description: </Typography>{book.description || ""}</Typography>
 
                                 </Box>
                                 <AddToCartModal bookCoverImageUrl={book.cover_image_url} open={openAddToCart} handleClose={handleCloseAddToCart} bookID={book.id} />

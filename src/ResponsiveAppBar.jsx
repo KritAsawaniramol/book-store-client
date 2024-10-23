@@ -35,7 +35,6 @@ const StyledBadge = styled(Badge)(() => ({
 
 function ResponsiveAppBar(props) {
   const [openColorMode, setOpenColorMode] = useState(false);
-
   const { countItemInCart } = useCart()
   const nav = useNavigate()
   const { openSignInFromOutSide = false, setOpenSignInFromOutSide = function () { } } = props
@@ -122,6 +121,10 @@ function ResponsiveAppBar(props) {
     {
       lable: 'My Orders',
       path: "/myorder"
+    },
+    {
+      lable: 'Top-up',
+      path: "/top-up"
     }
   ];
 
