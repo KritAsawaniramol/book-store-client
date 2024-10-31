@@ -99,8 +99,8 @@ export default function Book() {
                                     
                                     <Typography ><Typography component={'span'} fontWeight={'bold'} >Author: </Typography>{book.author_name || ""}</Typography>
                                     
-                                    
-                                    <Typography><Typography component={'span'} fontWeight={'bold'} display={'inline'}>Description: </Typography>{book.description || ""}</Typography>
+                                    <Typography  fontWeight={'bold'} >Description: </Typography>
+                                    <Typography sx={{whiteSpace: "pre-line"}}>{book.description || ""}</Typography>
 
                                 </Box>
                                 <AddToCartModal bookCoverImageUrl={book.cover_image_url} open={openAddToCart} handleClose={handleCloseAddToCart} bookID={book.id} />

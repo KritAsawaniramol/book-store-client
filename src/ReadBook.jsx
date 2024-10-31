@@ -49,7 +49,7 @@ export default function ReadBook() {
                                             })
                                         }
                                     </Box>
-                                    <Typography>Description: {book.description}</Typography>
+                                    <Typography sx={{whiteSpace: "pre-line"}}>Description: {book.description}</Typography>
                                 </Box>
                             </Box>
                             : <CircularProgress />

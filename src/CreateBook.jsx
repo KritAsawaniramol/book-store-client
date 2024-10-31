@@ -97,6 +97,7 @@ export default function CreateBook() {
                 setImage()
                 setTitle("")
                 setTags([])
+                setDescription("")
                 setPdf()
                 setPrice(0)
                 setProgressValue(0)

@@ -16,7 +16,9 @@ export default function ShelfBookCard(props) {
             <Card variant='outlined'  
             sx={{
                 position: 'relative', 
-                maxWidth: "220px", maxHeight: "290px", aspectRatio: '2.2/4',
+                aspectRatio: '2.2/4',
+                height: '300px',
+                
                 '&:hover' : {
                     borderColor: theme.palette.primary.main,
                     borderWidth: '3px'
@@ -29,7 +31,7 @@ export default function ShelfBookCard(props) {
                     src={`${import.meta.env.VITE_BOOK_SERVER_API_URL}${bookCoverImageUrl}`}
                 />
                  </Link>
-                <CardContent sx={{ padding: '8px', paddingBottom: '0px' }}>
+                <CardContent sx={{ padding: '8px', paddingBottom: '0px' , height: '200px'}}>
                     <Typography fontSize={'15px'} fontWeight={'bold'} margin={0} sx={{
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
