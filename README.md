@@ -30,7 +30,7 @@
 2. Navigate to the project directory:
 
    ```bash
-   cd your-repo-name
+   cd book-store-client
    ```
 
 3. Install the dependencies:
