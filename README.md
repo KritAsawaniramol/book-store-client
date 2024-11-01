@@ -5,17 +5,11 @@
 
 <p align="center">
   <a href="#built-with">Built With</a> •
-  <a href="#architecture">Architecture</a> •
   <a href="#installation">Installation</a> •
-  <a href="#endpoints">Endpoints</a> •
+  <a href="#running-the-project">Running the Project</a> •
+  <a href="#screenshots">Screenshots</a> •
   <a href="#license">License</a>
 </p>
-
-## Features
-
-- Feature 1
-- Feature 2
-- Feature 3
 
 ## Built With
 
@@ -25,17 +19,12 @@
 - [![MUI][MUI-badge]][MUI-url]
 - [![Stripe][Stripe-badge]][Stripe-url]
 
-## Getting Started
-
-Follow these instructions to set up the project locally.
-
-
 ## Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/KritAsawaniramol/book-store-client.git
    ```
 
 2. Navigate to the project directory:
